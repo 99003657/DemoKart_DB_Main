@@ -1,0 +1,15 @@
+CREATE OR ALTER PROCEDURE usp_RemoveCart
+
+AS
+BEGIN TRY
+     BEGIN 
+	    DELETE FROM Cart;
+	 END
+END TRY
+BEGIN CATCH
+   PRINT('ERROR')
+END CATCH
+   GO
+
+EXECUTE usp_RemoveCart;
+select * from Cart;
